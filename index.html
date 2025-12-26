@@ -3,289 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Finnigan's Painting | Professional Painters</title>
-  <meta name="description" content="Finnigan's Painting provides professional residential and commercial painting services. Free estimates available. Call (902) 452-6965." />
+  <title>Finnigan's Painting | Residential & Commercial Painting</title>
+  <meta name="description" content="Finnigan's Painting offers professional residential and commercial painting services. Call (902) 452-6965 for a free estimate." />
 
-  <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #1f2937;
-      background: #ffffff;
-    }
-
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid #e5e7eb;
-      z-index: 1000;
-    }
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    nav img {
-      height: 50px;
-    }
-    nav a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: #1f2937;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover { color: #1f3a5f; }
-
-    /* HERO */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-      url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat fixed;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero-content {
-      animation: fadeUp 1.2s ease;
-    }
-    .hero h1 {
-      font-size: 3.2rem;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 750px;
-      margin: auto;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 32px;
-      background: #1f3a5f;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    /* SECTIONS */
-    section { padding: 100px 20px; }
-    .container { max-width: 1200px; margin: auto; }
-    h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 60px;
-      position: relative;
-    }
-    h2::after {
-      content: '';
-      width: 60px;
-      height: 4px;
-      background: #1f3a5f;
-      display: block;
-      margin: 15px auto 0;
-    }
-
-    /* SERVICES */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 35px;
-    }
-    .service-card {
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
-    .service-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .service-card div { padding: 25px; text-align: center; }
-    .service-card h3 { color: #1f3a5f; margin-bottom: 10px; }
-
-    /* GALLERY */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    }
-
-    /* ABOUT */
-    .about {
-      background: linear-gradient(135deg, #f9fafb, #eef2f7);
-      text-align: center;
-    }
-    .about p {
-      max-width: 900px;
-      margin: auto;
-      font-size: 1.1rem;
-      line-height: 1.9;
-    }
-
-    /* CTA */
-    .cta {
-      background: linear-gradient(rgba(31,58,95,0.9), rgba(31,58,95,0.9)),
-      url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover no-repeat;
-      color: #ffffff;
-      text-align: center;
-      padding: 120px 20px;
-    }
-
-    footer {
-      background: #111827;
-      color: #d1d5db;
-      text-align: center;
-      padding: 35px 20px;
-      font-size: 0.9rem;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.3rem; }
-    }
-  .logo {
-  height: 90px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
-  transition: transform 0.3s ease;
-}
-.logo:hover {
-  transform: scale(1.05);
-}
-
-</style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
   <nav>
-    <div class="nav-container">
-      <img src="logo.jpeg" alt="Finnigan Painting Logo" class="logo">
-      <div>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
+    <img src="logo.jpeg" alt="Finnigan Painting Logo" class="logo" />
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Professional Residential & Commercial Painting</h1>
-      <p>Trusted, high-quality painting services with precision, care, and long-lasting results.</p>
-      <a class="btn" href="tel:19024526965">Get a Free Estimate</a>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div>
+      <h1>Professional Painting Services</h1>
+      <p>Residential & Commercial Painting You Can Trust</p>
+      <a href="tel:19024526965" class="btn">Free Estimate</a>
     </div>
   </section>
 
   <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <h2>Our Painting Services</h2>
-      <div class="services">
-        <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
-          <div>
-            <h3>Residential Painting</h3>
-            <p>Interior and exterior painting that enhances and protects your home.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1597008641621-cefdcf7189b3">
-          <div>
-            <h3>Commercial Painting</h3>
-            <p>Professional painting solutions for offices and commercial properties.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da">
-          <div>
-            <h3>Preparation & Finishing</h3>
-            <p>Surface preparation, priming, and flawless finishing.</p>
-          </div>
-        </div>
+  <section id="services" class="services">
+    <h2 style="text-align:center; margin-bottom:30px;">Our Services</h2>
+    <div class="gallery">
+      <div>
+        <h3>Residential Painting</h3>
+        <p>Interior and exterior painting for homes, apartments, and renovations.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="about">
-    <div class="container">
-      <h2>Our Work</h2>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1588854337111-1c8c3c5c59c9">
-        <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6">
-        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+      <div>
+        <h3>Commercial Painting</h3>
+        <p>Professional painting solutions for offices, retail, and commercial spaces.</p>
+      </div>
+      <div>
+        <h3>Surface Preparation</h3>
+        <p>Sanding, patching, priming, and repairs for a flawless finish.</p>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>Why Choose Finnigan's Painting</h2>
-      <p>
-        We take pride in delivering professional workmanship, honest pricing, and dependable service.
-        From small residential projects to full commercial jobs, every detail matters.
-      </p>
-    </div>
+  <section id="about" style="padding:60px 40px; background:#f9fafb; text-align:center;">
+    <h2>Why Choose Finnigan's Painting?</h2>
+    <p style="max-width:800px; margin:20px auto;">
+      We are committed to quality craftsmanship, attention to detail, and customer satisfaction.
+      Every project is completed on time, on budget, and with professional results.
+    </p>
   </section>
 
-  <!-- CTA -->
-  <section id="contact" class="cta">
-    <h2>Request Your Free Quote</h2>
-    <p>Call us today at <strong>(902) 452-6965</strong></p>
-    <a class="btn" href="tel:19024526965">Call Now</a>
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <img src="images/interior.jpg" alt="Interior Painting" />
+    <img src="images/exterior.jpg" alt="Exterior Painting" />
+    <img src="images/commercial.jpg" alt="Commercial Painting" />
   </section>
 
+  <!-- CONTACT -->
+  <section id="contact" style="padding:60px 40px; text-align:center;">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> (902) 452-6965</p>
+    <p>Serving residential and commercial clients with reliable painting services.</p>
+    <a href="tel:19024526965" class="btn">Get Your Free Quote</a>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    © 2025 Finnigan's Painting. All Rights Reserved.
+    © 2025 Finnigan's Painting. All rights reserved.
   </footer>
 
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
