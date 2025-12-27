@@ -26,6 +26,29 @@ body {
 .logo-container img {
   height: 90px; /* BIGGER LOGO */
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.company-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e88e5;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
 
 .nav a {
   margin-left: 1.5rem;
@@ -257,6 +280,7 @@ body {
 }
 
 /* MOBILE */
+/* MOBILE */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -284,4 +308,14 @@ body {
   .logo-container img {
     height: 75px;
   }
+
+  /* ADD THESE */
+  .company-name {
+    font-size: 1.2rem;
+  }
+
+  .tagline {
+    font-size: 0.7rem;
+  }
 }
+
