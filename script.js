@@ -1,16 +1,27 @@
-// Simple fade-in on scroll
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
-    }
+const toggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navMenu");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+/* IMAGE MODAL */
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const images = document.querySelectorAll(".clickable");
+const closeBtn = document.querySelector(".close");
+
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalImg.src = img.src;
   });
 });
 
-document.querySelectorAll(".service-card, .gallery-grid img").forEach(el => {
-  el.style.opacity = 0;
-  el.style.transform = "translateY(20px)";
-  el.style.transition = "0.6s ease";
-  observer.observe(el);
-});
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+modal.onclick = () => {
+  modal.style.display = "none";
+};
