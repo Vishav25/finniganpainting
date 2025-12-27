@@ -1,6 +1,16 @@
-window.addEventListener("scroll", () => {
-  const nav = document.querySelector("nav");
-  nav.style.boxShadow = window.scrollY > 10
-    ? "0 4px 12px rgba(0,0,0,0.15)"
-    : "0 2px 10px rgba(0,0,0,0.08)";
+// Simple fade-in on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+});
+
+document.querySelectorAll(".service-card, .gallery-grid img").forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = "translateY(20px)";
+  el.style.transition = "0.6s ease";
+  observer.observe(el);
 });
