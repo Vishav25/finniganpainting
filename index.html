@@ -2,84 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Finnigan's Painting | Residential & Commercial Painting</title>
-  <meta name="description" content="Finnigan's Painting offers professional residential and commercial painting services. Call (902) 452-6965 for a free estimate." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finnigan’s Painting | Professional Painting Services</title>
+  <meta name="description" content="Professional interior and exterior painting services. Quality workmanship, reliable service, and free estimates.">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <img src="logo.jpeg" alt="Finnigan Painting Logo" class="logo" />
-    <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<header class="header">
+  <div class="container nav">
+    <h1 class="logo">Finnigan’s Painting</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact" class="cta-nav">Free Estimate</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div>
-      <h1>Professional Painting Services</h1>
-      <p>Residential & Commercial Painting You Can Trust</p>
-      <a href="tel:19024526965" class="btn">Free Estimate</a>
-    </div>
-  </section>
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2>Quality Painting That Transforms Your Space</h2>
+    <p>Interior • Exterior • Residential • Commercial</p>
+    <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section id="services" class="services">
-    <h2 style="text-align:center; margin-bottom:30px;">Our Services</h2>
-    <div class="gallery">
-      <div>
-        <h3>Residential Painting</h3>
-        <p>Interior and exterior painting for homes, apartments, and renovations.</p>
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="images/interior.jpg" alt="Interior Painting">
+        <h3>Interior Painting</h3>
+        <p>Clean, precise, and professional finishes that refresh your home or office.</p>
       </div>
-      <div>
+      <div class="service-card">
+        <img src="images/exterior.jpg" alt="Exterior Painting">
+        <h3>Exterior Painting</h3>
+        <p>Durable coatings that protect and enhance curb appeal.</p>
+      </div>
+      <div class="service-card">
+        <img src="images/commercial.jpg" alt="Commercial Painting">
         <h3>Commercial Painting</h3>
-        <p>Professional painting solutions for offices, retail, and commercial spaces.</p>
-      </div>
-      <div>
-        <h3>Surface Preparation</h3>
-        <p>Sanding, patching, priming, and repairs for a flawless finish.</p>
+        <p>Reliable painting solutions for businesses, offices, and retail spaces.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" style="padding:60px 40px; background:#f9fafb; text-align:center;">
-    <h2>Why Choose Finnigan's Painting?</h2>
-    <p style="max-width:800px; margin:20px auto;">
-      We are committed to quality craftsmanship, attention to detail, and customer satisfaction.
-      Every project is completed on time, on budget, and with professional results.
-    </p>
-  </section>
+<section id="gallery" class="section light">
+  <div class="container">
+    <h2 class="section-title">Recent Work</h2>
+    <div class="gallery-grid">
+      <img src="images/interior.jpg" alt="Painting project">
+      <img src="images/exterior.jpg" alt="Painting project">
+      <img src="images/commercial.jpg" alt="Painting project">
+      <img src="images/interior.jpg" alt="Painting project">
+    </div>
+  </div>
+</section>
 
-  <!-- GALLERY -->
-  <section id="gallery" class="gallery">
-    <img src="images/interior.jpg" alt="Interior Painting" />
-    <img src="images/exterior.jpg" alt="Exterior Painting" />
-    <img src="images/commercial.jpg" alt="Commercial Painting" />
-  </section>
+<section id="contact" class="section">
+  <div class="container contact">
+    <h2 class="section-title">Request a Free Estimate</h2>
+    <p>Call or email us today — we respond fast.</p>
 
-  <!-- CONTACT -->
-  <section id="contact" style="padding:60px 40px; text-align:center;">
-    <h2>Contact Us</h2>
-    <p><strong>Phone:</strong> (902) 452-6965</p>
-    <p>Serving residential and commercial clients with reliable painting services.</p>
-    <a href="tel:19024526965" class="btn">Get Your Free Quote</a>
-  </section>
+    <div class="contact-box">
+      <a href="tel:+1234567890" class="btn-primary">📞 Call Now</a>
+      <p>Email: <strong>info@finniganpainting.com</strong></p>
+    </div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Finnigan's Painting. All rights reserved.
-  </footer>
+<footer class="footer">
+  <p>© 2025 Finnigan’s Painting. All Rights Reserved.</p>
+</footer>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
