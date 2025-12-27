@@ -1,16 +1,29 @@
+/* ================= MOBILE MENU TOGGLE ================= */
+
 const toggle = document.getElementById("menuToggle");
 const nav = document.getElementById("navMenu");
 
 toggle.addEventListener("click", () => {
   nav.classList.toggle("active");
+  toggle.classList.toggle("active");
 });
 
-/* IMAGE MODAL */
+/* Close menu when clicking a nav link (mobile UX) */
+document.querySelectorAll(".nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+    toggle.classList.remove("active");
+  });
+});
+
+/* ================= IMAGE MODAL ================= */
+
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
 const images = document.querySelectorAll(".clickable");
 const closeBtn = document.querySelector(".close");
 
+/* Open modal */
 images.forEach(img => {
   img.addEventListener("click", () => {
     modal.style.display = "block";
@@ -18,10 +31,12 @@ images.forEach(img => {
   });
 });
 
-closeBtn.onclick = () => {
+/* Close modal */
+closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
-};
+});
 
-modal.onclick = () => {
+/* Close modal when clicking outside image */
+modal.addEventListener("click", () => {
   modal.style.display = "none";
-};
+});
