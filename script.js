@@ -40,3 +40,9 @@ closeBtn.addEventListener("click", () => {
 modal.addEventListener("click", () => {
   modal.style.display = "none";
 });
+
+const form = document.querySelector(".contact-form form");
+
+form.addEventListener("submit", function() {
+  alert("Your email app will open to send your request.");
+});
