@@ -29,10 +29,6 @@ if (toggle && nav) {
     });
   });
 
-  if (menuOverlay) {
-    menuOverlay.addEventListener("click", closeMenu);
-  }
-
   document.addEventListener("click", (event) => {
     if (!nav.classList.contains("active")) {
       return;
@@ -50,6 +46,19 @@ if (toggle && nav) {
     }
   });
 }
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+const resetScrollTop = () => {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+};
+
+window.addEventListener("load", resetScrollTop);
+window.addEventListener("pageshow", resetScrollTop);
 
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");

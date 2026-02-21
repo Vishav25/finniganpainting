@@ -575,7 +575,7 @@ img {
 
   .menu-overlay.active {
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: none;
   }
 
   .header {
@@ -596,12 +596,14 @@ img {
     box-shadow: -20px 0 35px rgba(16, 34, 51, 0.2);
     transition: right 0.28s ease;
     z-index: 3100;
+    pointer-events: auto;
   }
 
   .nav a {
     display: block;
     width: 100%;
     font-size: 1.05rem;
+    pointer-events: auto;
   }
 
   .nav.active {
