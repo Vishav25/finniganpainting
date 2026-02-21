@@ -570,7 +570,7 @@ img {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease;
-    z-index: 1190;
+    z-index: 990;
   }
 
   .menu-overlay.active {
