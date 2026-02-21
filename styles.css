@@ -47,7 +47,7 @@ img {
 .header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 3000;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -570,7 +570,7 @@ img {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease;
-    z-index: 990;
+    z-index: 2000;
   }
 
   .menu-overlay.active {
@@ -595,7 +595,7 @@ img {
     background: #ffffff;
     box-shadow: -20px 0 35px rgba(16, 34, 51, 0.2);
     transition: right 0.28s ease;
-    z-index: 1200;
+    z-index: 3100;
   }
 
   .nav a {
