@@ -1,20 +1,37 @@
 const toggle = document.getElementById("menuToggle");
 const nav = document.getElementById("navMenu");
+const menuOverlay = document.getElementById("menuOverlay");
 
 if (toggle && nav) {
+  const closeMenu = () => {
+    nav.classList.remove("active");
+    toggle.classList.remove("active");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+    if (menuOverlay) {
+      menuOverlay.classList.remove("active");
+    }
+  };
+
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("active");
     toggle.classList.toggle("active", isOpen);
     toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    document.body.classList.toggle("menu-open", isOpen);
+    if (menuOverlay) {
+      menuOverlay.classList.toggle("active", isOpen);
+    }
   });
 
   document.querySelectorAll(".nav a").forEach((link) => {
     link.addEventListener("click", () => {
-      nav.classList.remove("active");
-      toggle.classList.remove("active");
-      toggle.setAttribute("aria-expanded", "false");
+      closeMenu();
     });
   });
+
+  if (menuOverlay) {
+    menuOverlay.addEventListener("click", closeMenu);
+  }
 
   document.addEventListener("click", (event) => {
     if (!nav.classList.contains("active")) {
@@ -22,10 +39,14 @@ if (toggle && nav) {
     }
     const clickedInsideNav = nav.contains(event.target);
     const clickedToggle = toggle.contains(event.target);
-    if (!clickedInsideNav && !clickedToggle) {
-      nav.classList.remove("active");
-      toggle.classList.remove("active");
-      toggle.setAttribute("aria-expanded", "false");
+    if (!clickedInsideNav && !clickedToggle && !menuOverlay?.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) {
+      closeMenu();
     }
   });
 }

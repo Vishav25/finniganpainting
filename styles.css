@@ -31,6 +31,10 @@ body {
   line-height: 1.65;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
 }
@@ -124,6 +128,7 @@ img {
   justify-content: center;
   flex-direction: column;
   gap: 5px;
+  z-index: 1300;
 }
 
 .menu-toggle span {
@@ -389,6 +394,10 @@ img {
   object-fit: cover;
 }
 
+.menu-overlay {
+  display: none;
+}
+
 .contact {
   background:
     radial-gradient(circle at 20% 0%, rgba(244, 123, 32, 0.2), transparent 35%),
@@ -553,44 +562,67 @@ img {
     display: flex;
   }
 
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 1190;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .header {
     padding: 12px 16px;
   }
 
   .nav {
     position: fixed;
-    top: 70px;
-    right: 14px;
-    width: min(290px, calc(100vw - 28px));
+    top: 0;
+    right: -100%;
+    width: min(300px, 80vw);
+    height: 100vh;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
-    padding: 18px;
-    border-radius: 12px;
-    border: 1px solid var(--line);
+    gap: 20px;
+    padding: 96px 20px 24px;
     background: #ffffff;
-    box-shadow: var(--shadow);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: -20px 0 35px rgba(16, 34, 51, 0.2);
+    transition: right 0.28s ease;
+    z-index: 1200;
+  }
+
+  .nav a {
+    display: block;
+    width: 100%;
+    font-size: 1.05rem;
   }
 
   .nav.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
+    right: 0;
+  }
+
+  .nav-btn {
+    margin-top: 8px;
+    text-align: center;
   }
 
   .hero {
     margin: 10px;
-    padding: 70px 20px;
+    min-height: 62vh;
+    padding: 60px 20px;
     border-radius: 16px;
   }
 
   .section {
     width: min(1200px, calc(100% - 20px));
-    padding: 64px 0;
+    padding: 54px 0;
   }
 
   .section.light {
@@ -604,6 +636,15 @@ img {
 }
 
 @media (max-width: 520px) {
+  .header {
+    padding: 10px 12px;
+  }
+
+  .logo-container img {
+    width: 44px;
+    height: 44px;
+  }
+
   .company-name {
     font-size: 1rem;
   }
@@ -614,6 +655,23 @@ img {
 
   .hero-buttons .btn {
     width: 100%;
+  }
+
+  .hero {
+    margin: 8px;
+    padding: 54px 16px;
+    min-height: 56vh;
+  }
+
+  .services-grid,
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card img,
+  .gallery-item img {
+    min-height: 210px;
+    height: 210px;
   }
 
   .contact-box,
